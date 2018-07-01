@@ -4,10 +4,11 @@ $(document).ready(function () {
 
         var $link=$(e.currentTarget);
         $link.toggleClass('fa-heart-o').toggleClass('fa-heart');
-
+     //   $('.js-like-article-count').html('TEST');
         $ajax({
             method: 'POST',
-            url: $link.attr('href')
+           // url: $link.attr('href'),
+            url: '/news/{slug}/heart'
         }).done(function(data) {
             $('.js-like-article-count').html(data.hearts);
         })
